@@ -1,4 +1,5 @@
 import "../styles/tasks.css"
+import { Task } from "./Task"
 
 export function Tasks() {
     return(
@@ -9,10 +10,13 @@ export function Tasks() {
                 <span>10</span>
             </div>
             <div>
-                <p>Completed todos</p>
+                <p>Completed</p>
                 <span>1 of 10</span>
             </div>
           </header>
+          <div className="list">
+            <Task/>
+          </div>
         </section>
     )     
 }
