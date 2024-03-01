@@ -1,16 +1,34 @@
 import './App.css'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Header } from './components/Header'
 import { Input } from "./components/Input"
 import { Tasks } from "./components/Tasks"
 
+const LOCAL_STORAGE_KEY = "todo:savedTasks";
 
 function App() {
  
   const [tasks, setTasks] = useState([]);
 
+  function setTasksAndSave(newTasks) {
+    setTasks(newTasks);
+    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(newTasks))
+  }
+
+  function loadSavedTasks() {
+    const saved = localStorage.getItem(LOCAL_STORAGE_KEY);
+    console.log(saved);
+    if(saved){
+      setTasks(JSON.parse(saved))
+    }
+  }
+
+  useEffect(() => {
+    loadSavedTasks();
+  }, [])
+
   function addTask(taskTitle){
-    setTasks([
+    setTasksAndSave([
       ...tasks,
       {
         // creates a uniqe id for every created task randomUUID
@@ -19,6 +37,11 @@ function App() {
         isCompleted: false
       }
     ]);
+  }
+
+  function deleteTaskById(taskId) {
+    const newTasks = tasks.filter(task => task.id !== taskId)
+    setTasksAndSave(newTasks);
   }
 
   function toggleTaskCompletedById(taskId) {
@@ -31,8 +54,10 @@ function App() {
       }
       return task;
     })
-    setTasks(newTasks);
+    setTasksAndSave(newTasks);
   }
+
+
 
   return (
       <>
@@ -40,6 +65,7 @@ function App() {
         <Input onAddTask={addTask}/>
         <Tasks
           tasks={tasks}
+          onDelete={deleteTaskById}
           onComplete={toggleTaskCompletedById}
         />
       </>
