@@ -1,7 +1,7 @@
 .task {
     width: 100%;
     background: whitesmoke;
-    border: 2px solid #333333;
+    border: 1px solid  #B4B4B8;
     padding: 16px;
     border-radius: 0px;
     display: flex;
@@ -11,9 +11,9 @@
   }
   
   .task p {
-    font-size: 14px;
+    font-size: 16px;
     line-height: 19px;
-    color: #F2F2F2;
+    color: black;
     margin-right: auto;
   }
   
