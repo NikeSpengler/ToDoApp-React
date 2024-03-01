@@ -15,6 +15,14 @@
     gap: 8px;
     padding: 0 1rem;
   }
+
+  @media (max-width: 800px) {
+    .newTaskForm {
+        width: 50%;
+        display: flex;
+        justify-content: center;
+    }
+}
   
   .newTaskForm input {
     height: 100%;
@@ -44,3 +52,9 @@
     font-weight: 400;
     font-size: 16px;
   }
+
+  @media (max-width: 800px) {
+    .newTaskForm button {
+        width: 70%;
+    }
+}
