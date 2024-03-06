@@ -1,7 +1,8 @@
 # ToDo App
-A CRUD todo app. Please try it out following the demo adress bellow. 
+A CRUD(Create, Read, Update, Delete) todo app. Please try it out following the demo adress bellow. 
+
 ## Built in: 
-React, Vite, Tailwind
+React, Vite, Local Storage and styled by Tailwind
 
 ## Demo: 
 https://todo-react-vite-nikespengler.netlify.app/
