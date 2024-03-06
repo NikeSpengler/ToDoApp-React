@@ -1,6 +1,6 @@
 # ToDo App
 
-##Build in: 
+## Build in: 
 React, Vite, Tailwind
 
-##Demo: https://todo-react-vite-nikespengler.netlify.app/
+## Demo: https://todo-react-vite-nikespengler.netlify.app/
